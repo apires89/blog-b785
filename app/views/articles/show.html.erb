@@ -10,5 +10,25 @@
   <%= @article.body %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', root_path %>
+
+<%# if @article.photos.first.attached? %>
+   <% @article.photos.each do |photo| %>
+     <%= cl_image_tag photo.key, class: "avatar", height: 300, width: 400  %>
+   <% end %>
+<%# end %>
+
+
+
+<%# if @article.photos.first.attached? %>
+
+<%# else %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+<%# end %>
+
+
